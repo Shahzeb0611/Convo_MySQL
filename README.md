@@ -61,13 +61,8 @@ The database consists of three main tables:
 ├── database.sql                    # Full database schema
 ├── insert_data.sql                 # Sample insert statements
 ├── load_data.py                    # Python script to load CSV data
-├── run_q1.py                       # Query: Top revenue products (weekday/weekend)
-├── run_q2.py                       # Query: Customer demographics analysis
-├── run_q3.py                       # Query: Additional analytics
+├── run_q1.py  - run_q20.py         # Analytical query scripts (see below)
 ├── q4_query.sql                    # SQL query file
-├── run_q5.py                       # Query: Top occupations by product category
-├── run_q6.py                       # Query: City category by marital status
-├── run_q7.py                       # Query: Purchase by stay duration & gender
 ├── requirements.txt                # Python dependencies
 └── MySQL_Setup_Guide.md            # Detailed setup instructions
 ```
@@ -116,38 +111,67 @@ The database consists of three main tables:
 
 ---
 
-## 📊 Analytical Queries
+## 📊 Analytical Queries (20 Queries)
 
-### Q1: Top Revenue-Generating Products (`run_q1.py`)
-Analyzes top products by revenue, comparing weekday vs weekend performance with monthly drill-down.
+### Basic Analytics (Q1-Q4)
 
-### Q2: Customer Demographics (`run_q2.py`)
-Analyzes customer demographics by purchase amount with city category breakdown. Includes summaries by gender, age group, and city category.
+| Query | File | Description |
+|-------|------|-------------|
+| Q1 | `run_q1.py` | Top revenue products - weekday vs weekend with monthly drill-down |
+| Q2 | `run_q2.py` | Customer demographics by purchase amount with city breakdown |
+| Q3 | `run_q3.py` | Additional business intelligence queries |
+| Q4 | `q4_query.sql` | Direct SQL query file |
 
-### Q3: Additional Analytics (`run_q3.py`)
-Contains additional business intelligence queries.
+### Customer & Demographics Analytics (Q5-Q7)
 
-### Q4: SQL Query (`q4_query.sql`)
-Direct SQL query file for execution in MySQL Workbench or command line.
+| Query | File | Description |
+|-------|------|-------------|
+| Q5 | `run_q5.py` | **Top 5 Occupations** by product category sales |
+| Q6 | `run_q6.py` | City category performance by marital status (6 months) |
+| Q7 | `run_q7.py` | Average purchase by stay duration and gender |
 
-### Q5: Top Occupations by Product Category Sales (`run_q5.py`)
-Highlights the **top 5 occupations** driving sales within each product category. Features:
-- Ranked occupations per category by total sales
-- Overall top 10 occupations summary
-- Occupation diversity analysis (categories purchased)
+### Revenue & City Analytics (Q8-Q10)
 
-### Q6: City Category Performance by Marital Status (`run_q6.py`)
-Assesses purchase amounts by **city category and marital status** over the past 6 months. Features:
-- Monthly breakdown by city and marital status
-- Summary totals with averages per transaction and per customer
-- Cross-tab analysis with percentage breakdown
+| Query | File | Description |
+|-------|------|-------------|
+| Q8 | `run_q8.py` | **Top 5 Revenue-Generating Cities** by product category |
+| Q9 | `run_q9.py` | Monthly sales growth % by product category |
+| Q10 | `run_q10.py` | Weekend vs weekday sales by age group |
 
-### Q7: Average Purchase Amount by Stay Duration and Gender (`run_q7.py`)
-Calculates the **average purchase amount** based on years stayed in the city and gender. Features:
-- Detailed breakdown by stay duration and gender
-- Summary by stay duration (all genders)
-- Summary by gender (all durations)
-- Cross-tab with spending comparison insights
+### Product & Time Analysis (Q11-Q14)
+
+| Query | File | Description |
+|-------|------|-------------|
+| Q11 | `run_q11.py` | Top revenue products weekday/weekend - monthly drill-down |
+| Q12 | `run_q12.py` | Store revenue growth rate - quarterly for 2017 |
+| Q13 | `run_q13.py` | Supplier sales contribution by store and product |
+| Q14 | `run_q14.py` | **Seasonal analysis** (Spring/Summer/Fall/Winter) |
+
+### Advanced Analytics (Q15-Q17)
+
+| Query | File | Description |
+|-------|------|-------------|
+| Q15 | `run_q15.py` | Store-supplier monthly revenue **volatility analysis** |
+| Q16 | `run_q16.py` | **Product affinity analysis** - products bought together |
+| Q17 | `run_q17.py` | Yearly revenue trends with **ROLLUP** aggregation |
+
+### Business Intelligence (Q18-Q20)
+
+| Query | File | Description |
+|-------|------|-------------|
+| Q18 | `run_q18.py` | Revenue & volume analysis - **H1 vs H2** comparison |
+| Q19 | `run_q19.py` | Revenue **spike detection** and outlier identification |
+| Q20 | `run_q20.py` | Create **STORE_QUARTERLY_SALES** view for optimization |
+
+### Key SQL Concepts Demonstrated
+
+- **CTEs (Common Table Expressions)** - Q5, Q8, Q11, Q15, Q16
+- **Window Functions** - ROW_NUMBER, LAG, PARTITION BY - Q9, Q12, Q15
+- **ROLLUP Aggregation** - Q17
+- **Conditional Aggregation** - CASE WHEN in aggregates - Q10, Q14, Q18
+- **View Creation** - Q20
+- **Statistical Analysis** - Volatility, outliers - Q15, Q19
+- **Market Basket Analysis** - Product affinity - Q16
 
 ---
 
