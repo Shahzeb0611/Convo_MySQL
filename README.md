@@ -62,9 +62,12 @@ The database consists of three main tables:
 ├── insert_data.sql                 # Sample insert statements
 ├── load_data.py                    # Python script to load CSV data
 ├── run_q1.py                       # Query: Top revenue products (weekday/weekend)
-├── run_q2.py                       # Query: Customer segmentation analysis
+├── run_q2.py                       # Query: Customer demographics analysis
 ├── run_q3.py                       # Query: Additional analytics
 ├── q4_query.sql                    # SQL query file
+├── run_q5.py                       # Query: Top occupations by product category
+├── run_q6.py                       # Query: City category by marital status
+├── run_q7.py                       # Query: Purchase by stay duration & gender
 ├── requirements.txt                # Python dependencies
 └── MySQL_Setup_Guide.md            # Detailed setup instructions
 ```
@@ -118,11 +121,33 @@ The database consists of three main tables:
 ### Q1: Top Revenue-Generating Products (`run_q1.py`)
 Analyzes top products by revenue, comparing weekday vs weekend performance with monthly drill-down.
 
-### Q2: Customer Segmentation (`run_q2.py`)
-Performs customer segmentation analysis based on purchasing behavior.
+### Q2: Customer Demographics (`run_q2.py`)
+Analyzes customer demographics by purchase amount with city category breakdown. Includes summaries by gender, age group, and city category.
 
 ### Q3: Additional Analytics (`run_q3.py`)
 Contains additional business intelligence queries.
+
+### Q4: SQL Query (`q4_query.sql`)
+Direct SQL query file for execution in MySQL Workbench or command line.
+
+### Q5: Top Occupations by Product Category Sales (`run_q5.py`)
+Highlights the **top 5 occupations** driving sales within each product category. Features:
+- Ranked occupations per category by total sales
+- Overall top 10 occupations summary
+- Occupation diversity analysis (categories purchased)
+
+### Q6: City Category Performance by Marital Status (`run_q6.py`)
+Assesses purchase amounts by **city category and marital status** over the past 6 months. Features:
+- Monthly breakdown by city and marital status
+- Summary totals with averages per transaction and per customer
+- Cross-tab analysis with percentage breakdown
+
+### Q7: Average Purchase Amount by Stay Duration and Gender (`run_q7.py`)
+Calculates the **average purchase amount** based on years stayed in the city and gender. Features:
+- Detailed breakdown by stay duration and gender
+- Summary by stay duration (all genders)
+- Summary by gender (all durations)
+- Cross-tab with spending comparison insights
 
 ---
 
