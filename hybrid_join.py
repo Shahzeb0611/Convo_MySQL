@@ -230,7 +230,7 @@ class MasterDataManager:
         with open(filepath, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                customer_id = int(row['User_ID'])
+                customer_id = int(row['Customer_ID'])
                 self.customer_data[customer_id] = {
                     'Customer_ID': customer_id,
                     'Gender': row['Gender'],
@@ -251,7 +251,7 @@ class MasterDataManager:
                 self.product_data[product_id] = {
                     'Product_ID': product_id,
                     'Product_Category': row['Product_Category'],
-                    'Price': float(row['price']),
+                    'Price': float(row['price$']),
                     'Store_ID': int(row['storeID']),
                     'Supplier_ID': int(row['supplierID']),
                     'Store_Name': row['storeName'],
@@ -427,11 +427,11 @@ class HybridJoin:
                 
                 # Parse transaction tuple
                 tuple_data = {
-                    'order_id': int(row['Order_ID']),
-                    'customer_id': int(row['User_ID']),
+                    'order_id': int(row['orderID']),
+                    'customer_id': int(row['Customer_ID']),
                     'product_id': row['Product_ID'],
-                    'quantity': int(row['Quantity']),
-                    'order_date': row['Order_Date']
+                    'quantity': int(row['quantity']),
+                    'order_date': row['date']
                 }
                 
                 self.stream_buffer.put(tuple_data)
